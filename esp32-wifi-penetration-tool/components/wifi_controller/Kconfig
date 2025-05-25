@@ -1,0 +1,42 @@
+# put here your custom config value
+menu "Wi-Fi Controller"
+    config SCAN_MAX_AP
+        int "Maximun AP scanned"
+        default 20
+        help
+        Maximum number of scanned nearby AP
+    menu "Rohit_Wi-Pi"
+        config MGMT_AP_SSID
+            string "Rohit_Wi-Pi SSID"
+            default "Rohit_Wi-Pi"
+            help
+            SSID of Rohit_Wi-Pi
+
+        config MGMT_AP_PASSWORD
+            string "Rohit_Wi-Pi Password"
+            default "Rohit@123"
+            help
+            Password for Rohit_Wi-Pi WPA2 (minimum 8 characters)
+
+        config MGMT_AP_CHANNEL
+            int "Rohit_Wi-Pi channel"
+            range 1 13
+            default 3
+            help
+            Channel on which Rohit_Wi-Pi should run
+            
+        config MGMT_AP_MAX_CONNECTIONS
+            int "Maximum number of connected clients"
+            range 0 10
+            default 1
+            help
+            Password for Rohit_Wi-Pi
+
+        config MGMT_AP_AUTH_ON
+            bool "Password protected Rohit_Wi-Pi"
+            default y
+            help
+                If set to true, WPA2-PSK will be used. Otherwise authentication will be open
+                and anyone can connect to this Rohit_Wi-Pi.
+    endmenu
+endmenu
